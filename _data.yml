@@ -1,0 +1,16 @@
+lang: en
+
+home:
+  welcome: Krishna's Blog
+
+menu_links: []
+extra_head: []
+
+# Metas plugin https://lume.land/plugins/metas/#description
+metas:
+  site: Krishna's Blog
+  description: General description of the blog
+  title: "=title"
+  image: "=image"
+  twitter: "@username"
+  lang: en

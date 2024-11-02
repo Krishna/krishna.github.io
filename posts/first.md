@@ -1,13 +1,7 @@
 ---
 title: First Post Title
-draft: false
+draft: true
 tags: []
 comments: {}
 ---
 So this is the first post.
-
-
-
-
-
-

@@ -1,6 +1,6 @@
 ---
 title: Code Highlighting Test
-draft: false
+draft: true
 tags: []
 comments: {}
 excerpt: Making sure code highlighting works properly on the blog.

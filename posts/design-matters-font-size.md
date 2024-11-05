@@ -7,12 +7,13 @@ tags:
   - development
 comments: {}
 excerpt: 'Ways to lose a potential customer, number 1203...'
+date: '2024-11-04T00:00:00.000Z'
 ---
 I've been evaluating competitors to a mobile app I have been a paid user of for many years.
 
 The app I want to replace has turned into a slow, janky and unresponsive mess of an app. It has a number of competitors, some of which are strong contenders to de-throne the app I am using.
 
-One of the competitors is a positive delight to use in comparison. It launches quickly, mostly adheres to the iOS platform guidelines and has much to commend it.  
+One of the competitors is a positive delight to use in comparison. It launches quickly, mostly adheres to the iOS platform guidelines and has much to commend it.
 
 **But... the size of the font used in much of the app is just a little bit too small. Enough to introduce friction and discomfort in using the app.**
 

@@ -1,6 +1,5 @@
 ---
 title: Swift & Rust Learning Resources for People Who Know Some C++
-date: '2024-11-19T00:00:00.000Z'
 draft: false
 tags:
   - development
@@ -8,6 +7,8 @@ tags:
   - c++
   - rust
 comments: {}
+excerpt: Learning Resources for C++ Successor Languages
+date: '2024-11-19T00:00:00.000Z'
 ---
 I have a background in C++, and when learning new languages I tend to try and form a mental model of how those languages work from a very C or C++ developer perspective. Think: what goes on the stack, what goes on the heap, how is data passed around and shared, and so on.
 

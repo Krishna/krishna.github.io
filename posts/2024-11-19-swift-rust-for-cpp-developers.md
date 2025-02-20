@@ -1,5 +1,5 @@
 ---
-title: Swift &amp; Rust Learning Resources for People Who Know Some C++
+title: Swift and Rust Learning Resources for People Who Know Some C++
 draft: false
 tags:
   - development

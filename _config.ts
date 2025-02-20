@@ -11,7 +11,7 @@ import "npm:prismjs@1.29.0/components/prism-rust.js";
 import "npm:prismjs@1.29.0/components/prism-typescript.js";
 import "npm:prismjs@1.29.0/components/prism-python.js";
 
-const site = lume();
+const site = lume({location: new URL("https://krishna.github.io")});
 site.use(prism(/* Options */));
 site.use(blog());
 

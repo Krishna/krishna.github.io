@@ -9,7 +9,7 @@ extra_head: []
 # Metas plugin https://lume.land/plugins/metas/#description
 metas:
   site: Krishna's Blog
-  description: Thoughts about Software and Building Software
+  description: "Thoughts about Software and Building Software"
   title: "=title"
   image: "=image"
   twitter: "@username"

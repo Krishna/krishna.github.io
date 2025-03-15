@@ -32,6 +32,8 @@ I can understand why less experienced developers ask these questions. I also und
 
 But the start of your development career is no time to be closed off to learning new things.
 
+![Illustration of a person on a crossroads](/uploads/limiting-beliefs_chatgpt.jpg)
+
 ## Mindset is Everything
 
  Sure, it can seem overwhelming - there is so much to potentially learn. I’d certainly encourage anyone to pick a point of focus to start with. 
@@ -83,3 +85,5 @@ I’ll end this with some words from [Enid Bell, a sculptor and educator](https:
 >		
 >	An artist must have a variety of experience at his hand…
 	Think of the mediums used by the great masters such as Leonardo Da Vinci and Michelangelo who could carve, paint, design a cathedral but to mention a few of the things they did.”
+
+![Sculpture "Dancers" by Enid Bell](/uploads/dancers-in-bronze__enid-bell.jpg)

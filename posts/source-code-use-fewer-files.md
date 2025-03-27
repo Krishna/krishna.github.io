@@ -1,6 +1,6 @@
 ---
 title: 'Source Code: Use Fewer Files?'
-draft: true
+draft: false
 tags:
   - software engineering
   - development
@@ -36,6 +36,3 @@ Downsides:
 Ideally our development tools (code editors, version control, code review tools) would be able to let us work at different levels of abstractions over the code (types, call trees, run-time execution paths) and persist the code indepently of how we manipulate and read it.
 
 There has been some work done on this in different projects, but none of them have had widespread adoption. So I think it's going to be a while before we get there -  if ever.
-
-
-

@@ -33,7 +33,9 @@ Downsides:
 - sometimes its easier or at least feels easier to collaborate if the source code is split across a lot of files
 - related to the previous point: version control - including reviewing changes - might feel easier if using more files.
 
-Ideally we'd have a way where source code and file organization was completely orthogonal. Our development tools (editors, version control, code review) would let us work at whatever level of abstraction we wanted (types, call trees) and be able to handle and transform how the code was persisted independently of that.
+Ideally our development tools (code editors, version control, code review tools) would be able to let us work at different levels of abstractions over the code (types, call trees, run-time execution paths) and persist the code indepently of how we manipulate and read it.
 
-But I think its going to be a long time before we get there.
+There has been some work done on this in different projects, but none of them have had widespread adoption. So I think it's going to be a while before we get there -  if ever.
+
+
 

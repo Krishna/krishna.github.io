@@ -2,7 +2,10 @@
 title: Programmer Junk Food
 date: '2025-03-19T00:00:00.000Z'
 draft: false
-tags: []
+tags:
+  - development
+  - learning
+  - software engineering
 comments: {}
 excerpt: Feels like learning - but isn't.
 ---

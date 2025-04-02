@@ -7,6 +7,7 @@ tags:
   - swift
 comments: {}
 excerpt: Trade offs when using fewer source code files.
+date: '2025-03-27T00:00:00.000Z'
 ---
 On [lobste.rs Simon Willison remarked]([Link](https://lobste.rs/s/ib6oyf/why_did_you_need_change_8_files_add_one#c_fwzbmn)):
 

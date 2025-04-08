@@ -9,6 +9,7 @@ tags:
   - tools
 comments: {}
 excerpt: Some handy tools I use on the command line
+date: '2025-04-02T00:00:00.000Z'
 ---
 Unless I am logged into a server (typically some Linux distro), I'm mostly using macOS.
 

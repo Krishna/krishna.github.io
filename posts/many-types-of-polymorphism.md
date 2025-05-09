@@ -70,7 +70,19 @@ That’s pretty laborious, and code duplication can be a source of errors.
 
 ### Ad-hoc Polymorphism (Overloading)
 
-Ad-hoc polymorphism is where functions with the same name can handle different parameter types. Or put another way: function overloading.
+Ad-hoc polymorphism is where functions with the same name can behave differently based on the types of their arguments. 
+
+Some approaches to ad-hoc polymorphism are:
+
+- Function Overloading
+- Interfaces/Traits/Protocols (eg Java Interfaces, Rust Traits, Swift Protocols)
+- Type Classes (eg Haskell)
+
+#### Function Overloading
+
+Function overloading is a simple form of ad-hoc polymorphism.
+
+It is where functions with the same name can handle different parameter types.
 
 ALGOL 58/60 supported this way back in 1959.
 
@@ -100,7 +112,124 @@ int main() {
 
 ```
 
-Unlike the C code, we can use a single name `add` for functions that handle different types.
+Unlike the C code, we can use a single name `add` for functions that handle different types. The compiler determines which version of `add` to call based on the argument types at compile time.
+
+*Note:* 
+
+*In ad-hoc polymorphism each function could have a completely different implementation or algorithm.* 
+
+*This is one way in which ad-hoc polymorphism differs from parametric polymorphism.* 
+
+*We’ll see later, how in parametric polymorphism one implementation/algorithm is used to work with many different types.*
+
+*Some modern languages combine both approaches for maximum flexibility and type safety.*
+
+![2d abstract shapes](/uploads/abstract-flat-thin-00.png)
+
+
+#### Interfaces/Traits/Protocols
+
+Interfaces, traits, and protocols are a common and powerful form of ad-hoc polymorphism found in many modern programming languages. 
+
+They let you define shared behaviour as a contract that types can choose to implement.
+
+This form of polymorphism is explicit. Types must opt in by conforming to the interface/trait/protocol (in Java/Rust/Swift respectively).
+
+Here is an example in Swift:
+
+```swift
+
+// define a protocol for types than can be drawn...
+protocol Drawable {
+    func draw()
+}
+
+// implement for Strings...
+extension String: Drawable {
+    func draw() {
+        print("Draw the string \"\(self)\" in cool way..")
+    }    
+}
+
+// define a custom type that can be drawn...
+struct Owl: Drawable {
+    func draw() {
+        print("Draw the owl...")
+    }
+}
+
+// A function that can work with any type that conforms to Drawable...
+func render(_ shape: Drawable) {
+    shape.draw()
+}
+
+render(Owl())
+render("Hello world")
+```
+
+![2d abstract shapes](/uploads/abstract-flat-thin-01.png)
+
+#### Type Classes
+
+Type classes are a powerful form of ad-hoc polymorphism. They let you define functions that work over different types but only if those types implement certain behaviour.
+
+Unlike subtype polymorphism (e.g., in OOP), where types share a common parent, type classes define behaviour independently of a type hierarchy.
+
+Let’s use a simple example in Haskell to illustrate:
+
+```haskell
+
+-- Define a type class Printable with one method: printIt
+class Printable a where
+    printIt :: a -> String
+
+-- Provide a Printable instance for Int
+instance Printable Int where
+    printIt x = "Int: " ++ show x
+
+-- Provide a Printable instance for Bool
+instance Printable Bool where
+    printIt True  = "Yes"
+    printIt False = "No"
+
+-- Define a custom data type
+data Person = Person { name :: String, age :: Int }
+
+-- Provide a Printable instance for Person
+instance Printable Person where
+    printIt (Person n a) = "Person: " ++ n ++ ", Age: " ++ show a
+
+-- A generic function that prints any list of Printable values
+printAll :: Printable a => [a] -> [String]
+printAll = map printIt
+
+main :: IO ()
+main = do
+    -- Some example values
+    let ints    = [1, 2, 3]
+        bools   = [True, False, True]
+        people  = [Person "Alice" 30, Person "Bob" 25]
+
+    -- Print Ints
+    putStrLn "Printing Ints:"
+    mapM_ putStrLn (printAll ints)
+
+    -- Print Bools
+    putStrLn "\nPrinting Bools:"
+    mapM_ putStrLn (printAll bools)
+
+    -- Print custom Person values
+    putStrLn "\nPrinting People:"
+    mapM_ putStrLn (printAll people)
+
+
+```
+
+Haskell’s type classes are like Swift protocols or Rust traits, but with a more powerful form of retroactive modelling and a purely static dispatch model baked into the type system.
+
+*Note: We won’t be going into the various forms of dispatch in this blog post, but it’s something I will cover in a follow up.*
+
+
 
 ![Geometric Shapes - 3d](/uploads/abstract-slice-00.png)
 
@@ -354,3 +483,9 @@ Ultimately we want to be able to:
 Polymorphism aims to address these three goals.
 
 ![Abstract shapes 2d](/uploads/abstract-00.png)
+
+## Revisions
+
+- v1.1: Updated the “Ad-hoc Polymorphism” section to cover Interfaces/Protocols/Traits and Type Classes.
+- v1: original
+

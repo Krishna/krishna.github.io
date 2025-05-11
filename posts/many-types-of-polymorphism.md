@@ -299,7 +299,38 @@ Parametric polymorphism allows you to write code that works:
 
 Templates in C++ in the 1990s brought parametric polymorphism to the mainstream. But it is currently widely supported by languages such as Java, C#, Rust, Kotlin and Swift.
 
-We’ll be using Swift in our examples for parametric polymorphism.
+#### Implementation Approaches: True Parametric Polymorphism vs. Static Monomorphism
+
+It's worth noting that there are different implementation approaches to parametric polymorphism across languages:
+
+1. **True Parametric Polymorphism**: In functional languages like OCaml, Haskell, and ML, a single polymorphic function value can work with multiple types at runtime. For example:
+
+	```ocaml
+	(* OCaml example of true parametric polymorphism *)
+	let id x = x  (* A single polymorphic function value *)
+	
+	(* These both use the same function value *)
+	let a = id 5         (* Works with int *)
+	let b = id "hello"   (* Works with string *)
+	```
+
+1. **Static Monomorphism**: In languages like C++ (with templates) and Rust, the compiler often creates separate specialized versions of the generic code for each type it's used with. This is a process called monomorphization. This means the "generic" function is actually compiled into multiple concrete implementations:
+
+
+	```rust
+	// Rust example demonstrating static monomorphism
+	fn id<T>(x: T) -> T { x }
+	
+	fn main() {
+	    // Behind the scenes, the compiler generates two different functions
+	    let a = id(5);       // Uses a version of id specialized for i32
+	    let b = id("hello"); // Uses a different version specialized for &str
+	}
+	```
+
+While both approaches provide type-safe generic programming, true parametric polymorphism can be more memory-efficient (one function instead of many) but may have different runtime performance characteristics.
+
+We'll be using Swift in our examples for parametric polymorphism, which generally follows a hybrid approach.
 
 #### Unconstrained Generics
 
@@ -486,6 +517,6 @@ Polymorphism aims to address these three goals.
 
 ## Revisions
 
+- v1.2: Updated the “Parametric Polymorphism” section to cover Static Monomorphism.
 - v1.1: Updated the “Ad-hoc Polymorphism” section to cover Interfaces/Protocols/Traits and Type Classes.
 - v1: original
-

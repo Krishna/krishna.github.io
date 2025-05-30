@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+  <!-- Process container -->
+  <rect x="150" y="80" width="500" height="440" rx="10" fill="#f0f0f0" stroke="#333" stroke-width="3"/>
+  
+  <!-- Process ID header -->
+  <rect x="150" y="80" width="500" height="40" rx="10" fill="#4a86e8" stroke="#333" stroke-width="3"/>
+  <text x="400" y="108" font-family="Arial" font-size="20" fill="white" text-anchor="middle" font-weight="bold">Process ID: 1234</text>
+  
+  <!-- Memory Regions -->
+  <rect x="170" y="140" width="460" height="280" rx="5" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="400" y="160" font-family="Arial" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">Memory Space</text>
+  
+  <!-- Text Segment -->
+  <rect x="190" y="170" width="420" height="60" rx="3" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+  <text x="400" y="205" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Text Segment (Program Code)</text>
+  
+  <!-- Data Segment -->
+  <rect x="190" y="240" width="420" height="50" rx="3" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2"/>
+  <text x="400" y="270" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Data Segment (Initialized/Uninitialized Data)</text>
+  
+  <!-- Heap -->
+  <rect x="190" y="300" width="420" height="50" rx="3" fill="#ffe6cc" stroke="#d79b00" stroke-width="2"/>
+  <text x="400" y="330" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Heap (Dynamic Memory)</text>
+  
+  <!-- Stack -->
+  <rect x="190" y="360" width="420" height="50" rx="3" fill="#f8cecc" stroke="#b85450" stroke-width="2"/>
+  <text x="400" y="390" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Stack (Function Calls, Local Variables)</text>
+  
+  <!-- Process Metadata -->
+  <rect x="170" y="430" width="220" height="80" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="2"/>
+  <text x="280" y="450" font-family="Arial" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Process Metadata</text>
+  <text x="280" y="470" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">State: Running</text>
+  <text x="280" y="490" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Owner: user (UID: 1000)</text>
+  <text x="280" y="510" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Parent PID: 1000</text>
+  
+  <!-- File Descriptors -->
+  <rect x="400" y="430" width="230" height="80" rx="5" fill="#fff2cc" stroke="#d6b656" stroke-width="2"/>
+  <text x="515" y="450" font-family="Arial" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">File Descriptors</text>
+  <text x="515" y="470" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">FD 0: stdin</text>
+  <text x="515" y="490" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">FD 1: stdout</text>
+  <text x="515" y="510" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">FD 2: stderr</text>
+  
+  <!-- External connections -->
+  <!-- Parent process -->
+  <circle cx="70" cy="140" r="40" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+  <text x="70" y="135" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Parent</text>
+  <text x="70" y="150" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">PID: 1000</text>
+  <path d="M110 140 L150 140" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Kernel Resources -->
+  <rect x="680" y="240" width="100" height="100" rx="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2"/>
+  <text x="730" y="290" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Kernel</text>
+  <text x="730" y="310" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Resources</text>
+  <path d="M650 290 L680 290" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- File System -->
+  <rect x="680" y="400" width="100" height="80" rx="10" fill="#fff2cc" stroke="#d6b656" stroke-width="2"/>
+  <text x="730" y="440" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">File</text>
+  <text x="730" y="460" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">System</text>
+  <path d="M630 470 L680 440" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <rect x="50" y="520" width="700" height="60" rx="5" fill="white" stroke="#666" stroke-width="1"/>
+  <text x="400" y="540" font-family="Arial" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Process Components Legend</text>
+  
+  <rect x="70" y="550" width="15" height="15" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
+  <text x="150" y="562" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Text Segment</text>
+  
+  <rect x="200" y="550" width="15" height="15" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1"/>
+  <text x="280" y="562" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Data Segment</text>
+  
+  <rect x="330" y="550" width="15" height="15" fill="#ffe6cc" stroke="#d79b00" stroke-width="1"/>
+  <text x="400" y="562" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Heap</text>
+  
+  <rect x="460" y="550" width="15" height="15" fill="#f8cecc" stroke="#b85450" stroke-width="1"/>
+  <text x="520" y="562" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Stack</text>
+  
+  <rect x="590" y="550" width="15" height="15" fill="#e1d5e7" stroke="#9673a6" stroke-width="1"/>
+  <text x="650" y="562" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Metadata</text>
+  
+  <rect x="680" y="550" width="15" height="15" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
+  <text x="720" y="562" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">FDs</text>
+</svg>

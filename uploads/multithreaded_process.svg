@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 800 650" xmlns="http://www.w3.org/2000/svg">
+  <!-- Process container -->
+  <rect x="150" y="40" width="500" height="550" rx="10" fill="#f0f0f0" stroke="#333" stroke-width="3"/>
+  
+  <!-- Process ID header -->
+  <rect x="150" y="40" width="500" height="40" rx="10" fill="#4a86e8" stroke="#333" stroke-width="3"/>
+  <text x="400" y="68" font-family="Arial" font-size="20" fill="white" text-anchor="middle" font-weight="bold">Process ID: 1234</text>
+  
+  <!-- Memory Regions -->
+  <rect x="170" y="100" width="460" height="220" rx="5" fill="white" stroke="#666" stroke-width="2"/>
+  <text x="400" y="120" font-family="Arial" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">Shared Memory Space</text>
+  
+  <!-- Text Segment -->
+  <rect x="190" y="130" width="420" height="50" rx="3" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+  <text x="400" y="160" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Text Segment (Program Code)</text>
+  
+  <!-- Data Segment -->
+  <rect x="190" y="190" width="420" height="50" rx="3" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2"/>
+  <text x="400" y="220" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Data Segment (Initialized/Uninitialized Data)</text>
+  
+  <!-- Heap -->
+  <rect x="190" y="250" width="420" height="50" rx="3" fill="#ffe6cc" stroke="#d79b00" stroke-width="2"/>
+  <text x="400" y="280" font-family="Arial" font-size="16" fill="#333" text-anchor="middle">Heap (Dynamic Memory)</text>
+  
+  <!-- Thread 1 -->
+  <rect x="170" y="330" width="220" height="170" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="2"/>
+  <text x="280" y="350" font-family="Arial" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">Thread 1</text>
+  
+  <!-- Thread 1 Stack -->
+  <rect x="180" y="360" width="200" height="70" rx="3" fill="#f8cecc" stroke="#b85450" stroke-width="2"/>
+  <text x="280" y="395" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Thread 1 Stack</text>
+  
+  <!-- Thread 1 Registers -->
+  <rect x="180" y="440" width="200" height="50" rx="3" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+  <text x="280" y="465" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Thread 1 Registers &amp; Context</text>
+  
+  <!-- Thread 2 -->
+  <rect x="410" y="330" width="220" height="170" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="2"/>
+  <text x="520" y="350" font-family="Arial" font-size="18" fill="#333" text-anchor="middle" font-weight="bold">Thread 2</text>
+  
+  <!-- Thread 2 Stack -->
+  <rect x="420" y="360" width="200" height="70" rx="3" fill="#f8cecc" stroke="#b85450" stroke-width="2"/>
+  <text x="520" y="395" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Thread 2 Stack</text>
+  
+  <!-- Thread 2 Registers -->
+  <rect x="420" y="440" width="200" height="50" rx="3" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+  <text x="520" y="465" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Thread 2 Registers &amp; Context</text>
+  
+  <!-- TID Labels -->
+  <text x="280" y="480" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">TID: 1234-1</text>
+  <text x="520" y="480" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">TID: 1234-2</text>
+  
+  <!-- Process Metadata -->
+  <rect x="170" y="510" width="220" height="70" rx="5" fill="#e1d5e7" stroke="#9673a6" stroke-width="2"/>
+  <text x="280" y="530" font-family="Arial" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Process Metadata</text>
+  <text x="280" y="550" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">State: Running</text>
+  <text x="280" y="570" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Owner: user (UID: 1000)</text>
+  
+  <!-- File Descriptors -->
+  <rect x="410" y="510" width="220" height="70" rx="5" fill="#fff2cc" stroke="#d6b656" stroke-width="2"/>
+  <text x="520" y="530" font-family="Arial" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">File Descriptors</text>
+  <text x="520" y="550" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">FD 0-2: stdin, stdout, stderr</text>
+  <text x="520" y="570" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">FD 3: network socket</text>
+  
+  <!-- External connections -->
+  <!-- Parent process -->
+  <circle cx="70" cy="100" r="40" fill="#d5e8d4" stroke="#82b366" stroke-width="2"/>
+  <text x="70" y="95" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Parent</text>
+  <text x="70" y="110" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">PID: 1000</text>
+  <path d="M110 100 L150 100" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Kernel Resources -->
+  <rect x="680" y="200" width="100" height="100" rx="10" fill="#dae8fc" stroke="#6c8ebf" stroke-width="2"/>
+  <text x="730" y="235" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Kernel</text>
+  <text x="730" y="255" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">CPU</text>
+  <text x="730" y="275" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">Schedulers</text>
+  <path d="M650 250 L680 250" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Thread scheduler arrows -->
+  <path d="M730 300 L730 330 L630 430" stroke="#333" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M730 300 L730 350 L520 430" stroke="#333" stroke-width="2" stroke-dasharray="5,5" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- File System -->
+  <rect x="680" y="400" width="100" height="80" rx="10" fill="#fff2cc" stroke="#d6b656" stroke-width="2"/>
+  <text x="730" y="440" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">File</text>
+  <text x="730" y="460" font-family="Arial" font-size="14" fill="#333" text-anchor="middle">System</text>
+  <path d="M630 545 L680 460" stroke="#333" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Arrowhead marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- Legend -->
+  <rect x="50" y="590" width="700" height="50" rx="5" fill="white" stroke="#666" stroke-width="1"/>
+  <text x="400" y="605" font-family="Arial" font-size="14" fill="#333" text-anchor="middle" font-weight="bold">Multi-Threaded Process Components</text>
+  
+  <rect x="70" y="615" width="12" height="12" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
+  <text x="130" y="625" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Shared Memory</text>
+  
+  <rect x="190" y="615" width="12" height="12" fill="#e1d5e7" stroke="#9673a6" stroke-width="1"/>
+  <text x="250" y="625" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Thread Space</text>
+  
+  <rect x="310" y="615" width="12" height="12" fill="#f8cecc" stroke="#b85450" stroke-width="1"/>
+  <text x="370" y="625" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Thread Stack</text>
+  
+  <rect x="430" y="615" width="12" height="12" fill="#d5e8d4" stroke="#82b366" stroke-width="1"/>
+  <text x="500" y="625" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Thread Context</text>
+  
+  <rect x="570" y="615" width="12" height="12" fill="#fff2cc" stroke="#d6b656" stroke-width="1"/>
+  <text x="640" y="625" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">Shared Resources</text>
+</svg>

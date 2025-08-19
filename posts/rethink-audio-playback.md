@@ -52,7 +52,7 @@ But the most interesting and potentially useful thing I think the Apple Podcast 
 
 #### Overcast
 
-![Overcast](/uploads/rethink-audio-playback/overcast.PNG)
+![Overcast](/uploads/rethink-audio-playback/overcast.png)
 
 
 
@@ -64,5 +64,5 @@ But the most interesting and potentially useful thing I think the Apple Podcast 
 ![Cloudbeats skip](/uploads/rethink-audio-playback/cloudbeats-skip.PNG)
 ![Cloudbeats skip bookmark](/uploads/rethink-audio-playback/cloudbeats-skip-bookmark.PNG)
 
-![Overcast - sleep timer](/uploads/rethink-audio-playback/overcast-sleep-timer.PNG)
-![Overcast - speed](/uploads/rethink-audio-playback/overcast-speed.PNG)
+![Overcast - sleep timer](/uploads/rethink-audio-playback/overcast-sleep-timer.png)
+![Overcast - speed](/uploads/rethink-audio-playback/overcast-speed.png)

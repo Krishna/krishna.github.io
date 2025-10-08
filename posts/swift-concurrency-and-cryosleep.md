@@ -27,13 +27,19 @@ In Swift, any time you `await` something, your task can pause and let others run
 
 In this post, we'll focus on what changes while you're in cryosleep: how the state you left behind can mutate, and why the assumptions you made before closing your eyes may be dangerously wrong when you open them again.
 
-After a suspension point (an `await` call) async function should "recheck their surroundings" as it were. Don’t assume that values, invariants, or even actors are in the same state you left them:
+After a suspension point (an `await` call), an async function should "recheck its surroundings" as it were. Don’t assume that values, invariants, or even actors are in the same state you left them:
 
-- Don’t rely on assumptions across awaits
-- Recheck important conditions after suspension
-- Keep critical sections atomic
+- don’t rely on assumptions across awaits
+- recheck important conditions after suspension
+- keep critical sections atomic
 
-Treat every `await` like being in cryosleep or time travel. When you wake up, ask the equivalents of “what time is it?", "where am I?", "what's happened?", "do I still have my stuff?" and "has anyone messed with my stuff?".
+Treat every `await` like being in cryosleep or time travel. When you wake up, ask the equivalents of:
+
+- what time is it?
+- where am I?
+- what's happened?
+- do I still have my stuff?
+- has anyone messed with my stuff?
 
 ## Code Example: Not Checking Assumptions
 
@@ -43,8 +49,8 @@ We'll have some code that:
 
 - creates an instance of an actor type `CryoShipBuggy` that is our simulation of the events of the films
 - Ripley goes into cryosleep
-- We wait before simulating the beginning of Alien 3 where Ripley's ship crashes
-- We wait long enough for Ripley to wake up from cryosleep and resume
+- we wait before simulating the beginning of Alien 3 where Ripley's ship crashes
+- we wait long enough for Ripley to wake up from cryosleep and resume
 
 
 ```swift

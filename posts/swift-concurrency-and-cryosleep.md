@@ -15,13 +15,13 @@ When a Swift task hits an await, it’s like going into cryosleep at the end of 
 
 Ripley closes her eyes — and wakes up in [Alien 3](https://en.wikipedia.org/wiki/Alien_3). The world has changed. Her crew is gone. Everything she thought was true before the sleep is no longer safe to assume.
 
-That’s what happens at every suspension point in Swift Concurrency. 
+That’s what can happen at every suspension point in Swift Concurrency. 
 
 ## What’s a Suspension Point?
 
 In Swift, any time you `await` something, your task can pause and let others run. When it resumes, it might wake up:
 
-- on a different thread or executor
+- on a different thread
 - after other tasks have mutated shared state
 - or in a world where your previous assumptions and invariants no longer hold
 
@@ -188,3 +188,12 @@ Suspension points don’t isolate you from change:
 Or put another way:
 
 Think of any `await` in Swift being like Ripley going into cryosleep. Your whole world might have changed by the time you awake. Act accordingly.
+
+## Updates
+
+**v1.1**
+
+In the "**What’s a Suspension Point?**" section I changed "*on a different thread or executor*" to "*on a different thread*".
+
+Thanks to [Matt Massicotte](https://www.massicotte.org/) for spotting this and providing the feedback. You should definitely check out his blog for more Swift Concurrency stuff.
+

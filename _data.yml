@@ -1,16 +1,13 @@
 lang: en
-
 home:
   welcome: Krishna's Blog
-
 menu_links: []
-extra_head: []
-
-# Metas plugin https://lume.land/plugins/metas/#description
+extra_head: "<script data-goatcounter=\"https://kenshi.goatcounter.com/count\"\r\n        async src=\"//gc.zgo.at/count.js\"></script>"
 metas:
   site: Krishna's Blog
-  description: "Thoughts about Software and Building Software"
-  title: "=title"
-  image: "=image"
-  twitter: "@username"
+  description: Thoughts about Software and Building Software
+  title: =title
+  image: =image
+  twitter: '@username'
   lang: en
+  generator: false

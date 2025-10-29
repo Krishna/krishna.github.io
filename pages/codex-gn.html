@@ -1,0 +1,417 @@
+---
+layout: false
+menu:
+    visible: false
+    order: 0
+url: /projects/codex-goodnotes/
+title: "Codex: Pioneering iPad Note-Taking"
+description: Building a smart notebook app for iPad in 2013
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./codex-style.css" />
+        <title>Codex: Pioneering iPad Note-Taking</title>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <div
+                    style="
+                        border: 1px solid silver;
+                        border-radius: 10px;
+                        background: var(--bg-accent);
+                        margin-bottom: 10px;
+                    "
+                >
+                    <img src="/uploads/codex/hero.png" width="100%" />
+                </div>
+                <h1>Codex: The Smart Notebook for iPad</h1>
+                <p>
+                    Pioneering vector-based, stylus-free note-taking on iPad
+                    before it became standard
+                </p>
+                <div class="meta">
+                    <strong>2013</strong> • Founder & Lead iOS Engineer • Logic
+                    Colony
+                </div>
+            </div>
+        </header>
+
+        <div class="screenshot-placeholder">
+            <video
+                controls
+                width="800"
+                poster="/uploads/codex/poster.jpg"
+                style="text-align: center"
+            >
+                <source src="/uploads/codex/video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
+        </div>
+
+        <div class="container">
+            <section class="challenge">
+                <h2>The Vision</h2>
+                <p style="margin-top: 20px">
+                    Create a digital notebook that matched the freedom of pen
+                    and paper while adding intelligent organization &mdash; all
+                    without requiring a stylus on the original iPad's screen.
+                </p>
+
+                <div class="impact-stats">
+                    <div class="impact-stats">
+                        <div class="stat">
+                            <div class="stat-number">
+                                <img
+                                    src="/uploads/codex/moleskines.jpg"
+                                    height="200px"
+                                    style="border-radius: 20px"
+                                />
+                            </div>
+                        </div>
+
+                        <div class="stat">
+                            <div class="stat-number">
+                                <img
+                                    src="/uploads/codex/moleskine-page.JPG"
+                                    height="200px"
+                                    style="border-radius: 20px"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="stat">
+                        <div class="stat-number">iPad 1+</div>
+                        <div class="stat-label">
+                            Original Hardware <br />
+                            Support
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">2013</div>
+                        <div class="stat-label">
+                            <strong>Years</strong> before <br />Apple Pencil
+                            &amp; PencilKit
+                        </div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">$12.99</div>
+                        <div class="stat-label">Premium Pricing Strategy</div>
+                        <div class="stat-label">&mdash; for the time</div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>Engineering Principles</h2>
+                <div class="principles">
+                    <div class="principle">
+                        <h4>Performance as a Feature</h4>
+                        <p>
+                            Responsiveness wasn't optional — it was the
+                            difference between users feeling like they were
+                            sketching or fighting the software.
+                        </p>
+                        <br />
+                        <p>Every optimization served the core experience.</p>
+                    </div>
+                    <div class="principle">
+                        <h4>Invisible Complexity</h4>
+                        <p>
+                            The most sophisticated systems (vector rendering,
+                            layer management, multi-dimensional filtering) were
+                            designed to be completely transparent to users.
+                        </p>
+                        <br />
+                        <p>Simple UI, complex engineering.</p>
+                    </div>
+                    <div class="principle">
+                        <h4>Hardware Realism</h4>
+                        <p>
+                            Supporting the original iPad meant facing hard
+                            constraints.
+                        </p>
+                        <br />
+                        <p>
+                            Solutions had to be elegant and efficient, not just
+                            functional.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <div class="screenshot-placeholder">
+                <div>
+                    <img src="/uploads/codex/grid.png" height="300px" />
+                    &nbsp;
+                    <img src="/uploads/codex/sketches.png" height="300px" />
+                    &nbsp;
+                    <img src="/uploads/codex/paper-tool.png" height="300px" />
+                    &nbsp;
+                    <img src="/uploads/codex/pen-tool.png" height="300px" />
+                    &nbsp;
+                </div>
+                <p>Screenshots of the Codex app</p>
+            </div>
+
+            <section>
+                <h2>Technical Architecture</h2>
+                <p>
+                    Building a responsive, detailed drawing experience on 2013
+                    iPad hardware required careful engineering across multiple
+                    domains:
+                </p>
+
+                <div class="technical-grid">
+                    <div class="tech-card">
+                        <h3>Vector Ink Engine</h3>
+                        <p>
+                            Custom rendering system for smooth, pressure-free
+                            drawing
+                        </p>
+                        <ul>
+                            <li>Real-time stroke capture and rendering</li>
+                            <li>
+                                Vector-based storage for zoom without quality
+                                loss
+                            </li>
+                            <li>
+                                Optimized rendering pipeline for iPad 1 hardware
+                            </li>
+                            <li>
+                                Efficient memory management for complex drawings
+                            </li>
+                            <li>
+                                Developed using Objective-C and manual memory
+                                management (pre-ARC).
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-card">
+                        <h3>Multi-Layer Architecture</h3>
+                        <p>
+                            Separate rendering layers for different content
+                            types
+                        </p>
+                        <ul>
+                            <li>Independent image and ink layers</li>
+                            <li>Non-destructive annotation system</li>
+                            <li>Layer compositing for complex notes</li>
+                            <li>Efficient layer visibility toggling</li>
+                            <li>
+                                Image manipulation without affecting ink strokes
+                            </li>
+                            <li>Powered by Core Animation and Core Graphics</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-card">
+                        <h3>Smart Organization System</h3>
+                        <p>
+                            Tag-based architecture with multi-dimensional
+                            filtering
+                        </p>
+                        <ul>
+                            <li>Multi-tag support with AND/OR logic</li>
+                            <li>Real-time search across titles and content</li>
+                            <li>
+                                Position-based ordering with topic-aware
+                                persistence
+                            </li>
+                            <li>Grid view system inspired by iWork apps</li>
+                            <li>
+                                Visual relationship discovery through spatial
+                                arrangement
+                            </li>
+                            <li>Data persistence and search using Core Data</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-card">
+                        <h3>Gesture & Input System</h3>
+                        <p>Native iPad interaction patterns</p>
+                        <ul>
+                            <li>Pinch-to-zoom integration for detailed work</li>
+                            <li>
+                                Seamless transition between navigation and
+                                drawing modes
+                            </li>
+                            <li>Touch-optimized eraser and undo system</li>
+                            <li>
+                                Fine precision finger-based drawing and hand
+                                writing
+                            </li>
+                            <li>
+                                Clean, responsive UI that stayed out of the
+                                user's way
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-card">
+                        <h3>Data Management</h3>
+                        <p>Efficient storage and retrieval system</p>
+                        <ul>
+                            <li>Vector data serialization</li>
+                            <li>Image asset management</li>
+                            <li>Fast note preview generation for grid view</li>
+                            <li>
+                                Export pipeline to email, photo library, and
+                                printing
+                            </li>
+                            <li>Template creation system</li>
+                        </ul>
+                    </div>
+
+                    <div class="tech-card">
+                        <h3>Performance Optimization</h3>
+                        <p>Critical for original iPad support</p>
+                        <ul>
+                            <li>Efficient stroke simplification algorithms</li>
+                            <li>View recycling for grid layout</li>
+                            <li>Lazy loading of note content</li>
+                            <li>Memory-conscious image handling</li>
+                            <li>
+                                Smooth animations despite hardware constraints
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <div class="screenshot-placeholder">
+                <img src="/uploads/codex/pages-trimmed.png" width="100%" />
+            </div>
+
+            <section>
+                <h2>Product Evolution & Impact</h2>
+
+                <h3>What Shipped</h3>
+                <ul>
+                    <li>
+                        Full-featured note-taking app with vector drawing engine
+                    </li>
+                    <li>Multi-topic tagging and filtering system</li>
+                    <li>
+                        Position-based organization alongside time-based sorting
+                    </li>
+                    <li>
+                        Multi-image insertion with resize, rotate, and
+                        annotation
+                    </li>
+                    <li>Multiple paper styles, export options, and printing</li>
+                    <li>
+                        Social sharing integration (Twitter, email, photo
+                        library)
+                    </li>
+                </ul>
+
+                <div class="reflection">
+                    <h4>Engineering Retrospective</h4>
+                    <p><strong>What I'd approach differently today:</strong></p>
+                    <ul>
+                        <li>
+                            <strong>Cloud sync:</strong> In 2013, iCloud was
+                            nascent. Today, multi-device sync would be table
+                            stakes
+                        </li>
+                        <li>
+                            <strong>Handwriting recognition:</strong> Modern ML
+                            would enable OCR search within handwritten notes
+                        </li>
+                        <li>
+                            <strong>Apple Pencil optimization:</strong> Pressure
+                            sensitivity and tilt would add another dimension
+                        </li>
+                        <li>
+                            <strong>Collaborative features:</strong> Real-time
+                            collaboration wasn't feasible then but would be
+                            essential now
+                        </li>
+                        <li>
+                            <strong>Accessibility:</strong> VoiceOver support
+                            and other a11y features would be prioritized from
+                            day one
+                        </li>
+                        <li>
+                            <strong>Go-to-Market Strategy:</strong> Lesson
+                            learnt: launch early (MVP), iterate often, and let
+                            real use guide refinement.
+                        </li>
+                    </ul>
+                    <p style="margin-top: 15px">
+                        <strong>What still holds up:</strong> The core
+                        architecture: vector-based drawing, layer separation,
+                        and tag-based organization - remains sound. The focus on
+                        performance and unobtrusive UI are timeless principles.
+                    </p>
+                </div>
+            </section>
+
+            <section class="goodnotes-connection">
+                <h2>Relevant Experience for GoodNotes</h2>
+                <p>
+                    This project demonstrates direct domain expertise in the
+                    challenges GoodNotes faces:
+                </p>
+                <ul>
+                    <li>
+                        <strong>Deep digital ink expertise:</strong> Built a
+                        custom vector rendering engine from scratch,
+                        understanding the nuances of stroke capture,
+                        simplification, and rendering
+                    </li>
+                    <li>
+                        <strong>Note organization at scale:</strong> Designed
+                        and implemented systems for managing hundreds of notes
+                        with multi-dimensional filtering and search
+                    </li>
+                    <li>
+                        <strong>iPad-first development:</strong> designed from
+                        the ground up for the iPad.
+                    </li>
+                    <li>
+                        <strong>Balancing power with simplicity:</strong>
+                        Created a feature-rich app that stayed approachable—the
+                        same challenge GoodNotes faces daily
+                    </li>
+                    <li>
+                        <strong>Full ownership:</strong> Architected,
+                        implemented, and shipped the entire
+                        application—understanding every layer from rendering to
+                        data persistence
+                    </li>
+                    <li>
+                        <strong>Product thinking:</strong> Not just implementing
+                        features, but understanding why users need them and how
+                        they fit into workflows
+                    </li>
+                </ul>
+                <p style="margin-top: 30px; opacity: 0.9">
+                    I built this because I wanted to replace my Moleskines.
+                    Today, apps like GoodNotes have achieved that vision and
+                    gone far beyond. I'd love to bring my experience to help
+                    push the boundaries even further.
+                </p>
+            </section>
+
+            <div class="screenshot-placeholder">
+                <img src="/uploads/codex/note-editor.png" width="100%" />
+            </div>
+        </div>
+
+        <footer>
+            <p>Krishna Kotecha | Logic Colony | 2013</p>
+            <p style="margin-top: 10px; font-size: 0.9em">
+                Portfolio piece showcasing iOS engineering and product
+                development experience
+            </p>
+        </footer>
+    </body>
+</html>

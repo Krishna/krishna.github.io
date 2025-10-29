@@ -308,6 +308,12 @@ h3 {
         border-color 0.3s ease;
 }
 
+.screenshot-placeholder video {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
 footer {
     text-align: center;
     padding: 40px 20px;

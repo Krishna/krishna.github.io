@@ -234,3 +234,83 @@ main {
     font-size: 0.8rem;
     opacity: 0.7;
 }
+
+/* --- FOOTER STYLES --- */
+
+.site-footer {
+    margin-top: 5rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--color-dim); /* Subtle separator line */
+}
+
+/* Container for footer content */
+.footer-inner {
+    max-width: 800px; /* Or whatever your main content width is */
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Top Row: Navigation and Socials */
+.footer-top {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+@media (min-width: 600px) {
+    .footer-top {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* Navigation Links */
+.footer-nav {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 0.95rem;
+    transition: opacity 0.2s;
+}
+
+.footer-nav a:hover {
+    opacity: 0.7;
+}
+
+/* Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.footer-socials a {
+    color: var(--color-text);
+    opacity: 0.8;
+    display: flex;
+    align-items: center;
+    transition: all 0.2s;
+}
+
+.footer-socials a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: var(--color-primary, #0055ff);
+}
+
+/* Copyright Text */
+.footer-bottom small {
+    font-size: 0.85rem;
+    color: var(--color-dim);
+}

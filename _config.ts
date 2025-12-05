@@ -1,5 +1,5 @@
 import lume from "lume/mod.ts";
-import blog from "blog/mod.ts";
+import plugins from "./plugins.ts";
 
 import prism from "lume/plugins/prism.ts";
 
@@ -12,8 +12,8 @@ import "npm:prismjs@1.29.0/components/prism-typescript.js";
 import "npm:prismjs@1.29.0/components/prism-python.js";
 
 const site = lume({ location: new URL("https://krishna.github.io") });
+site.use(plugins());
 site.use(prism(/* Options */));
-site.use(blog());
 site.loadPages([".html"]);
 
 export default site;

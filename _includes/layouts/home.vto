@@ -1,0 +1,80 @@
+---
+layout: layouts/base.vto
+---
+
+<div class="home-wrapper">
+
+  <!-- 1. HERO SECTION -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">{{ title }}</h1>
+      <p class="hero-subtitle">{{ subtitle }}</p>
+
+      <div class="hero-buttons">
+        <a href="#projects" class="button button-primary">View Projects</a>
+        <a href="/blog/" class="button button-secondary">Read Blog</a>
+      </div>
+    </div>
+
+    <div class="hero-image">
+      <!-- Ensure you have an image at this path -->
+      <img src="{{ image }}" alt="Portrait" width="600" height="400">
+    </div>
+  </header>
+
+  <!-- 2. FEATURED PROJECTS -->
+  <section id="projects" class="section-container">
+    <h2 class="section-heading">Featured Projects</h2>
+
+    <div class="projects-grid">
+      {{# Retrieve pages tagged 'projects', sort by date #}}
+      {{ for project of search.pages("projects", "date=desc", 3) }}
+
+      {{# Determine where the card links to #}}
+      {{ set cardLink = project.external_url || project.url }}
+      {{ set linkText = project.cta_text || "View Case Study" }}
+
+      <article class="project-card">
+        <a href="{{ cardLink }}" class="project-image-link" aria-hidden="true">
+          <img src="{{ project.image }}" alt="{{ project.title }}" loading="lazy">
+        </a>
+        <div class="project-content">
+          <h3 class="project-title">
+            <a href="{{ cardLink }}">{{ project.title }}</a>
+          </h3>
+          <p class="project-desc">{{ project.description }}</p>
+
+          <a href="{{ cardLink }}" class="project-link">
+            {{ linkText }} &rarr;
+          </a>
+        </div>
+      </article>
+      {{ /for }}
+    </div>
+  </section>
+
+  <!-- 3. RECENT POSTS -->
+  <section class="section-container">
+    <h2 class="section-heading">Recent Posts</h2>
+    <div class="posts-list">
+      {{# Search for regular posts (type=post), exclude projects if they are mixed #}}
+      {{ for post of search.pages("type=post", "date=desc", 3) }}
+      <a href="{{ post.url }}" class="post-item">
+        <div class="post-thumb">
+          {{ if post.image }}
+            <img src="{{ post.image }}" alt="" loading="lazy">
+          {{ /if }}
+        </div>
+        <div class="post-meta">
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-excerpt">{{ post.description }}</p>
+          <time datetime="{{ post.date |> date('DATE') }}">
+            {{ post.date |> date('HUMAN_DATE') }}
+          </time>
+        </div>
+      </a>
+      {{ /for }}
+    </div>
+  </section>
+
+</div>

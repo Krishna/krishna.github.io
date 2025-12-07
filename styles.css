@@ -127,6 +127,13 @@ main {
     gap: 2rem;
 }
 
+/* Ensure we have 3 project cards on a row... */
+@media (min-width: 768px) {
+    .projects-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 .project-card {
     background-color: var(--color-code-bg, #f5f5f5); /* Fallback */
     border-radius: 8px;

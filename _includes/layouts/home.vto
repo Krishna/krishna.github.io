@@ -5,21 +5,24 @@ layout: layouts/base.vto
 <div class="home-wrapper">
 
   <!-- 1. HERO SECTION -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1 class="hero-title">{{ title }}</h1>
-      <p class="hero-subtitle">{{ subtitle }}</p>
+  <!-- The 'hero' class handles the full-width background -->
+  <header class="hero" style="background-image: url('{{ image }}');">
 
-      <div class="hero-buttons">
-        <a href="#projects" class="button button-primary">View Projects</a>
-        <a href="/blog/" class="button button-secondary">Read Blog</a>
+    <div class="hero-overlay"></div>
+
+    <!-- This new wrapper constrains the text to match your site's grid -->
+    <div class="hero-inner">
+      <div class="hero-content">
+        <h1 class="hero-title">{{ title }}</h1>
+        <p class="hero-subtitle">{{ subtitle }}</p>
+
+        <div class="hero-buttons">
+          <a href="#projects" class="button button-primary">View Projects</a>
+          <a href="/blog/" class="button button-secondary">Read Blog</a>
+        </div>
       </div>
     </div>
 
-    <div class="hero-image">
-      <!-- Ensure you have an image at this path -->
-      <img src="{{ image }}" alt="Portrait" width="600" height="400">
-    </div>
   </header>
 
   <!-- 2. FEATURED PROJECTS -->

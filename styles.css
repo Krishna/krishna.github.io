@@ -39,56 +39,102 @@ main {
     gap: 4rem;
 }
 
-/* Hero Section */
+/* --- HERO SECTION (Full Bleed BG + Aligned Text) --- */
+
 .hero {
+    /* 1. THE BREAKOUT TRICK: Force full browser width */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: 3rem;
+
+    /* 2. Height & Layout */
+    min-height: 500px;
     display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
-    gap: 2rem;
-    padding: 2rem 0;
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center the inner container */
+
+    /* 3. Background Settings */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fff;
 }
 
-/* Desktop layout for Hero */
-@media (min-width: 768px) {
-    .hero {
-        flex-direction: row;
-        justify-content: space-between;
-        text-align: left;
-    }
-    .hero-content {
-        flex: 1;
-        padding-right: 2rem;
-    }
-    .hero-image {
-        flex: 1;
-    }
+/* Dark overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(0, 0, 0, 0.8) 0%,
+        rgba(0, 0, 0, 0.5) 50%,
+        rgba(0, 0, 0, 0.2) 100%
+    );
+    z-index: 1;
+}
+
+/* 4. THE CONSTRAINT: Re-align text with the page grid */
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+
+    /* IMPORTANT: Match this to your main site's max-width!
+     Simple Blog is usually around 40rem - 50rem or 800px.
+     If the alignment is slightly off, adjust this number. */
+    max-width: 720px;
+
+    /* Match the padding of your main content area so left-edges align */
+    /*padding-left: 1rem;
+    padding-right: 1rem;*/
+}
+
+.hero-content {
+    max-width: 600px; /* Keeps line lengths readable */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-title {
-    font-size: 2.5rem;
+    font-size: 3rem;
     line-height: 1.1;
     margin-bottom: 1rem;
-    color: var(--color-text);
+    color: #fff;
 }
 
 .hero-subtitle {
-    font-size: 1.25rem;
-    color: var(--color-dim);
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 2rem;
-    max-width: 50ch;
 }
 
-.hero-buttons {
-    display: flex;
-    gap: 1rem;
+/* Button Colors for Dark Background */
+.hero-buttons .button-primary {
+    background-color: white;
+    color: black;
+    border: none;
 }
 
-.hero-image img {
-    border-radius: 8px;
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+.hero-buttons .button-secondary {
+    border: 1px solid white;
+    color: white;
+}
+
+/* Mobile Adjustment */
+@media (max-width: 600px) {
+    .hero {
+        padding: 1.5rem;
+        min-height: 350px;
+    }
+    .hero-title {
+        font-size: 2rem;
+    }
 }
 
 /* Buttons */

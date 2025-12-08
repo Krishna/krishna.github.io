@@ -34,3 +34,6 @@ Here are a few ways to dive in:
 *   **Use a lightweight editor**: Editors like Zed or VS Code work well for quick iteration
 *   **Run your code**: `swift run` compiles and executes your package immediately
 *   **Experiment**: Try writing small servers, utilities, or just code to explore aspects of the language.
+
+![Walled Garden](/uploads/beyond-walled-garden.jpeg)
+

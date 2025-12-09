@@ -1,6 +1,6 @@
 ---
 title: Self-Talk
-description: <br />Private Voice Journaling for your iPhone.<br /><br />Cultivate a stronger, kinder inner voice
+description: <br />Private Voice Journaling for your iPhone.<br /><br />Cultivate a stronger, kinder inner voice.
 date: 2023-10-01
 tags:
   - projects

@@ -80,4 +80,32 @@ layout: layouts/base.vto
     </div>
   </section>
 
+  <!-- 4. Sketchbook -->
+  <section class="section-container">
+    <h2 class="section-heading">The Sketchbook</h2>
+    <blockquote>
+        Unfinished ideas. Doodles. Scribbles.
+        Trying to get comfortable sharing unfinished works.
+    </blockquote>
+    <div class="posts-list">
+      {{# Search for regular posts (type=post), exclude projects if they are mixed #}}
+      {{ for post of search.pages("type=post sketchbook", "date=desc", 3) }}
+      <a href="{{ post.url }}" class="post-item">
+        <div class="post-thumb">
+          {{ if post.image }}
+            <img src="{{ post.image }}" alt="" loading="lazy">
+          {{ /if }}
+        </div>
+        <div class="post-meta">
+          <h3 class="post-title">{{ post.title }}</h3>
+          <p class="post-excerpt">{{ post.description }}</p>
+          <time datetime="{{ post.date |> date('DATE') }}">
+            {{ post.date |> date('HUMAN_DATE') }}
+          </time>
+        </div>
+      </a>
+      {{ /for }}
+    </div>
+  </section>
+
 </div>

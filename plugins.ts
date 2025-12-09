@@ -44,6 +44,37 @@ export default function (userOptions?: Options) {
   const options = merge(defaults, userOptions);
 
   return (site: Lume.Site) => {
+
+    const tagFeeds = [
+      "apps",
+      "book",
+      "development",
+      "mindset",
+      "philosophy",
+      "process",
+      "review",
+      "shipfam", "sketchbook",
+      "software",
+      "swift",
+      "tools",
+    ];
+
+    tagFeeds.forEach(tag => {
+      site.use(feed({
+        output: [`/feeds/${tag}.xml`],
+        query: `type=post ${tag}`,
+        info: {
+          title: "=metas.site",
+          subtitle: `${tag.charAt(0).toUpperCase() + tag.slice(1)} Posts`,
+          description: `Posts tagged with ${tag}`,
+        },
+        items: {
+          title: "=title",
+        },
+      }));
+    });
+
+
     site.use(postcss())
       .use(basePath())
       .use(toc())

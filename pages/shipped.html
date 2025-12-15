@@ -1,0 +1,272 @@
+---
+layout: false
+menu:
+    visible: false
+    order: 0
+url: /projects/shipped/
+title: Shipped.
+description: Shipped. Done. Momentum.
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Shipped. Done. Momentum.</title>
+        <style>
+            :root {
+                --bg: #f6f5f3;
+                --fg: #1c1c1c;
+                --muted: #6b6b6b;
+                --card: #fbfaf8;
+                --border: #d8d6d2;
+                --accent: #8b7d6b;
+            }
+
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #111111;
+                    --fg: #e8e8e8;
+                    --muted: #9a9a9a;
+                    --card: #1a1a1a;
+                    --border: #2a2a2a;
+                    --accent: #b8a98f;
+                }
+            }
+
+            body {
+                margin: 2rem;
+                background: var(--bg);
+                color: var(--fg);
+                font-family:
+                    ui-serif, Georgia, Cambria, "Times New Roman", serif;
+                line-height: 1.6;
+            }
+
+            /* -------- Explanation Section -------- */
+
+            section {
+                border: 4px solid var(--border);
+                border-radius: 20px;
+                padding: 1rem 1.5rem;
+                margin-bottom: 3rem;
+                background: color-mix(in srgb, var(--card-bg) 85%, transparent);
+            }
+
+            section h2 {
+                margin-top: 0;
+            }
+
+            section ul {
+                padding-left: 1.2rem;
+            }
+
+            /* -------- Timeline -------- */
+
+            .shipped-list {
+                position: relative;
+                margin-top: 3rem;
+                padding-left: 2rem;
+                border-left: 2px solid var(--border);
+            }
+
+            .year {
+                margin: 3rem 0 1rem -2rem;
+                font-size: 1.4rem;
+                color: var(--muted);
+            }
+
+            .done-entry {
+                position: relative;
+                margin-bottom: 1.5rem;
+                background: var(--card);
+                border: 1px solid var(--border);
+                border-radius: 8px;
+                padding: 0.75rem 1rem;
+                transition:
+                    transform 0.15s ease,
+                    box-shadow 0.15s ease;
+            }
+
+            .done-entry::before {
+                content: "";
+                position: absolute;
+                left: -2.4rem;
+                top: 1.2rem;
+                width: 10px;
+                height: 10px;
+                background: var(--accent);
+                border-radius: 50%;
+            }
+
+            .done-entry:hover,
+            .done-entry:focus-within {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            }
+
+            summary {
+                list-style: none;
+                cursor: pointer;
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+            }
+
+            summary::-webkit-details-marker {
+                display: none;
+            }
+
+            summary h3 {
+                margin: 0;
+                font-size: 1.05rem;
+            }
+
+            summary time {
+                color: var(--muted);
+                font-size: 0.9rem;
+            }
+
+            .entry-body {
+                margin-top: 0.75rem;
+            }
+
+            /* Density mode */
+            body.dense .done-entry {
+                padding: 0.4rem 0.75rem;
+            }
+
+            body.dense .entry-body {
+                font-size: 0.9rem;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>The Done Stack</h1>
+        <h3>
+            Every time you complete a sketch, a prototype, a post or a concept:
+            log it here.
+        </h3>
+
+        <section>
+            <h2>Why?</h2>
+            <p>It shows you are MOVING.</p>
+            <p>Even when things feel slow.</p>
+            <p>Write:</p>
+            <ul>
+                <li>What it is</li>
+                <li>What you learned</li>
+                <li>What felt good or bad</li>
+            </ul>
+            <h3>Keyboard Shortcuts</h3>
+            <ul>
+                <li>'o' - opens all the entries</li>
+                <li>'c' - collapses all the entries</li>
+                <li>'d' - toggles dense mode</li>
+            </ul>
+            <h3>Colophon</h3>
+            <p>This page was developed with ChatGPT.</p>
+            <p>
+                See:
+                <a
+                    href="https://chatgpt.com/share/693f93c2-43d4-8007-bd3f-5460b3e92eb3"
+                    >the chat</a
+                >.
+            </p>
+        </section>
+
+        <div class="shipped-list">
+            <h2 class="year">2025</h2>
+
+            <details class="done-entry" open>
+                <summary>
+                    <h3>Shipped: Done Stack page - this web page</h3>
+                    <time datetime="2025-12-14">Dec 15, Monday</time>
+                </summary>
+
+                <div class="entry-body">
+                    <p>
+                        <strong>What:</strong> A place on the web to keep my
+                        done stack - and foster momentum.
+                    </p>
+                    <p>
+                        <strong>Learned:</strong> Just use ChatGPT to create
+                        simple, effective HTML pages and include them on my dev
+                        blog.
+                    </p>
+                    <p>
+                        <strong>Felt Good:</strong> Getting this done quickly.
+                        Another useful thing shipped.
+                    </p>
+                    <p>
+                        <strong>Felt Bad:</strong> Nicer styling etc would be
+                        good. Having a script to generate the HTML would be
+                        nice... but does it matter yet? Nope.
+                    </p>
+                </div>
+            </details>
+
+            <details class="done-entry" open>
+                <summary>
+                    <h3>Shipped: Winter Arc Blog Post - Sun Tree Apps</h3>
+                    <time datetime="2025-12-14">Dec 14, Sunday</time>
+                </summary>
+
+                <div class="entry-body">
+                    <p>
+                        <strong>What:</strong> Intro blog post for Winter Arc
+                        series.
+                    </p>
+                    <p>
+                        <strong>Learned:</strong> Ship short posts. Write
+                        colloquially. Include images
+                    </p>
+                    <p>
+                        <strong>Felt Good:</strong> Unblocking myself by
+                        shipping a small post rather than what I was planning
+                        which could be a whole series of posts.
+                    </p>
+                    <p>
+                        <strong>Felt Bad:</strong> Took a bit too long to do.
+                        Got myself stuck, when I could have just shipped.
+                    </p>
+                </div>
+            </details>
+
+            <details class="done-entry" open>
+                <summary>
+                    <h3>Shipped: Static blog image grid</h3>
+                    <time datetime="2025-12-14">Dec 14, Sunday</time>
+                </summary>
+
+                <div class="entry-body">
+                    <p><strong>What:</strong> Simple HTML/CSS grid.</p>
+                    <p><strong>Learned:</strong> CSS Grid > Flex here.</p>
+                    <p><strong>Felt Good:</strong> Shipped fast.</p>
+                    <p>
+                        <strong>Felt Bad:</strong> Took a bit too long to do -
+                        rusty with my Ruby.
+                    </p>
+                </div>
+            </details>
+        </div>
+        <script>
+            document.addEventListener("keydown", (e) => {
+                if (e.key === "c") {
+                    document
+                        .querySelectorAll(".done-entry")
+                        .forEach((d) => (d.open = false));
+                }
+                if (e.key === "o") {
+                    document
+                        .querySelectorAll(".done-entry")
+                        .forEach((d) => (d.open = true));
+                }
+                if (e.key === "d") {
+                    document.body.classList.toggle("dense");
+                }
+            });
+        </script>
+    </body>
+</html>

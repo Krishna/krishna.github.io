@@ -14,133 +14,7 @@ description: Shipped. Done. Momentum.
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Shipped. Done. Momentum.</title>
-        <style>
-            :root {
-                --bg: #f6f5f3;
-                --fg: #1c1c1c;
-                --muted: #6b6b6b;
-                --card: #fbfaf8;
-                --border: #d8d6d2;
-                --accent: #8b7d6b;
-            }
-
-            @media (prefers-color-scheme: dark) {
-                :root {
-                    --bg: #111111;
-                    --fg: #e8e8e8;
-                    --muted: #9a9a9a;
-                    --card: #1a1a1a;
-                    --border: #2a2a2a;
-                    --accent: #b8a98f;
-                }
-            }
-
-            body {
-                margin: 2rem;
-                background: var(--bg);
-                color: var(--fg);
-                font-family:
-                    ui-serif, Georgia, Cambria, "Times New Roman", serif;
-                line-height: 1.6;
-            }
-
-            /* -------- Explanation Section -------- */
-
-            section {
-                border: 4px solid var(--border);
-                border-radius: 20px;
-                padding: 1rem 1.5rem;
-                margin-bottom: 3rem;
-                background: color-mix(in srgb, var(--card-bg) 85%, transparent);
-            }
-
-            section h2 {
-                margin-top: 0;
-            }
-
-            section ul {
-                padding-left: 1.2rem;
-            }
-
-            /* -------- Timeline -------- */
-
-            .shipped-list {
-                position: relative;
-                margin-top: 3rem;
-                padding-left: 2rem;
-                border-left: 2px solid var(--border);
-            }
-
-            .year {
-                margin: 3rem 0 1rem -2rem;
-                font-size: 1.4rem;
-                color: var(--muted);
-            }
-
-            .done-entry {
-                position: relative;
-                margin-bottom: 1.5rem;
-                background: var(--card);
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                padding: 0.75rem 1rem;
-                transition:
-                    transform 0.15s ease,
-                    box-shadow 0.15s ease;
-            }
-
-            .done-entry::before {
-                content: "";
-                position: absolute;
-                left: -2.4rem;
-                top: 1.2rem;
-                width: 10px;
-                height: 10px;
-                background: var(--accent);
-                border-radius: 50%;
-            }
-
-            .done-entry:hover,
-            .done-entry:focus-within {
-                transform: translateY(-2px);
-                box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-            }
-
-            summary {
-                list-style: none;
-                cursor: pointer;
-                display: flex;
-                justify-content: space-between;
-                gap: 1rem;
-            }
-
-            summary::-webkit-details-marker {
-                display: none;
-            }
-
-            summary h3 {
-                margin: 0;
-                font-size: 1.05rem;
-            }
-
-            summary time {
-                color: var(--muted);
-                font-size: 0.9rem;
-            }
-
-            .entry-body {
-                margin-top: 0.75rem;
-            }
-
-            /* Density mode */
-            body.dense .done-entry {
-                padding: 0.4rem 0.75rem;
-            }
-
-            body.dense .entry-body {
-                font-size: 0.9rem;
-            }
-        </style>
+        <link rel="stylesheet" href="styles/shipped.css" />
     </head>
     <body>
         <h1>The Done Stack</h1>
@@ -178,6 +52,45 @@ description: Shipped. Done. Momentum.
 
         <div class="shipped-list">
             <h2 class="year">2025</h2>
+
+            <details class="done-entry" open>
+                <summary>
+                    <h3>Showing: Reddit post for Winter Arc</h3>
+                    <time datetime="2025-12-14">Dec 15, Monday</time>
+                </summary>
+
+                <div class="entry-body">
+                    <p><strong>What:</strong>Weekly update on r/winterarc</p>
+                </div>
+            </details>
+
+            <details class="done-entry" open>
+                <summary>
+                    <h3>Home: Got Plumber to fix toilet flush leak</h3>
+                    <time datetime="2025-12-14">Dec 15, Monday</time>
+                </summary>
+
+                <div class="entry-body">
+                    <p><strong>What:</strong> Toilet leaked when flushed.</p>
+                    <p>
+                        <strong>Learned:</strong> Problem was with the seal on
+                        the pipe from the cistern (flush panel) to the bowl.
+                        Took plumber less than an hour to fix. Hardest bit was
+                        getting the cabinet off the toilet, and then checking
+                        everything (leak finding).
+                    </p>
+                    <p>
+                        <strong>Felt Good:</strong> Getting this done. Another
+                        home problem solved.
+                    </p>
+                    <p>
+                        <strong>Felt Bad:</strong> Took me ages to get a plumber
+                        and resolve this. Fear of getting a bad plumber, not
+                        knowing who was good, getting ripped off, work being
+                        more expensive etc. <strong>FEAR</strong>.
+                    </p>
+                </div>
+            </details>
 
             <details class="done-entry" open>
                 <summary>
@@ -236,17 +149,99 @@ description: Shipped. Done. Momentum.
 
             <details class="done-entry" open>
                 <summary>
-                    <h3>Shipped: Static blog image grid</h3>
+                    <h3>Shipped: Logo selector - Static blog image grid</h3>
                     <time datetime="2025-12-14">Dec 14, Sunday</time>
                 </summary>
 
                 <div class="entry-body">
-                    <p><strong>What:</strong> Simple HTML/CSS grid.</p>
-                    <p><strong>Learned:</strong> CSS Grid > Flex here.</p>
+                    <p>
+                        <strong>What:</strong> Simple HTML/CSS grid with a bit
+                        of JS. <a href="/pages/logos.html">See it here.</a>
+                    </p>
+                    <p>
+                        <a
+                            href="https://chatgpt.com/c/693ee6e7-6e40-8333-9e27-1c6d25ee1e9c"
+                            >Here is the ChatGPT chat.</a
+                        >
+                    </p>
+                    <p>
+                        <strong>Learned:</strong> How quickly AI can spit out a
+                        simple and useful idea.
+                    </p>
                     <p><strong>Felt Good:</strong> Shipped fast.</p>
                     <p>
                         <strong>Felt Bad:</strong> Took a bit too long to do -
                         rusty with my Ruby.
+                    </p>
+                </div>
+            </details>
+
+            <details class="done-entry" open>
+                <summary>
+                    <h3>
+                        Shipped: Ejected 'simple-theme' from blogs:
+                        krishna.github.io and suntreeapps.com/blog
+                    </h3>
+                    <time datetime="2025-12-11">Dec 11, Thu</time>
+                </summary>
+
+                <div class="entry-body">
+                    <p>
+                        <strong>What:</strong> More control of blog and styling.
+                    </p>
+                    <p>
+                        <strong>Learned:</strong> how to strip out themes from
+                        lume. Better understanding of lume.
+                    </p>
+                    <p>
+                        <strong>Felt Good:</strong> AI made this a lot easier,
+                        specifically Gemini.
+                        <a
+                            href="https://aistudio.google.com/prompts/1kTmqSDSHqaUbO9W2NcJWdLbTh60krrJ9"
+                            >See this chat</a
+                        >.
+                    </p>
+                    <p>
+                        <strong>Felt Bad:</strong> Sense of mystery about home
+                        lume works.
+                    </p>
+                </div>
+            </details>
+
+            <details class="done-entry" open>
+                <summary>
+                    <h3>Sketch: Web Component of 37 Signals FizzyDo Letter</h3>
+                    <time datetime="2025-12-11">Dec 11, Thu</time>
+                </summary>
+
+                <div class="entry-body">
+                    <p>
+                        <strong>What:</strong> Recreate "letter" from 37Signals
+                        FizzyDo website.
+                    </p>
+                    <p><strong>Learned:</strong>How to do web components.</p>
+                    <p>
+                        <strong>Felt Good:</strong> Shipped fast. CSS a lot
+                        easier with AI.
+                    </p>
+                    <p>
+                        <strong>Felt Bad:</strong> Web component have yet to
+                        integrate into one of my web projects.
+                    </p>
+                    <p>
+                        <a href="/uploads/shipped/fizzydo-letter-screenshot.png"
+                            ><img
+                                src="/uploads/shipped/fizzydo-letter-screenshot.png"
+                                height="250px"
+                            />
+                        </a>
+
+                        <a href="/uploads/shipped/fizzydo-letter-work.png"
+                            ><img
+                                src="/uploads/shipped/fizzydo-letter-work.png"
+                                height="250px"
+                            />
+                        </a>
                     </p>
                 </div>
             </details>

@@ -1,0 +1,124 @@
+:root {
+    --bg: #f6f5f3;
+    --fg: #1c1c1c;
+    --muted: #6b6b6b;
+    --card: #fbfaf8;
+    --border: #d8d6d2;
+    --accent: #8b7d6b;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg: #111111;
+        --fg: #e8e8e8;
+        --muted: #9a9a9a;
+        --card: #1a1a1a;
+        --border: #2a2a2a;
+        --accent: #b8a98f;
+    }
+}
+
+body {
+    margin: 2rem;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: ui-serif, Georgia, Cambria, "Times New Roman", serif;
+    line-height: 1.6;
+}
+
+/* -------- Explanation Section -------- */
+
+section {
+    border: 4px solid var(--border);
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 3rem;
+    background: color-mix(in srgb, var(--card-bg) 85%, transparent);
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+section ul {
+    padding-left: 1.2rem;
+}
+
+/* -------- Timeline -------- */
+
+.shipped-list {
+    position: relative;
+    margin-top: 3rem;
+    padding-left: 2rem;
+    border-left: 2px solid var(--border);
+}
+
+.year {
+    margin: 3rem 0 1rem -2rem;
+    font-size: 1.4rem;
+    color: var(--muted);
+}
+
+.done-entry {
+    position: relative;
+    margin-bottom: 1.5rem;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition:
+        transform 0.15s ease,
+        box-shadow 0.15s ease;
+}
+
+.done-entry::before {
+    content: "";
+    position: absolute;
+    left: -2.4rem;
+    top: 1.2rem;
+    width: 10px;
+    height: 10px;
+    background: var(--accent);
+    border-radius: 50%;
+}
+
+.done-entry:hover,
+.done-entry:focus-within {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+summary {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary h3 {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+summary time {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.entry-body {
+    margin-top: 0.75rem;
+}
+
+/* Density mode */
+body.dense .done-entry {
+    padding: 0.4rem 0.75rem;
+}
+
+body.dense .entry-body {
+    font-size: 0.9rem;
+}

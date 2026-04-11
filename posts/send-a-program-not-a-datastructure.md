@@ -12,8 +12,7 @@ excerpt: >-
 metas:
   title: 'Send a Program, Not a Data Structure'
   description: >-
-    A look at one of the most underappreciated ideas in system design — why
-    sending a program instead of a data structure changes everything.
+    A look at one of the most underappreciated ideas in system design.
   type: article
 ---
 ## A Big Idea in System Design
@@ -82,5 +81,3 @@ Whenever a data format is being stretched to encode behaviour it shouldn’t, wh
 a system maybe it’s worth asking: should this be a program instead?
 
 **Send a program, not a data structure.**
-
-

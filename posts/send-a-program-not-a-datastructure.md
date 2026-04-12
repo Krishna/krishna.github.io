@@ -60,7 +60,7 @@ The complexity doesn’t go away, but it gets contained in a more manageable for
 
 ### Examples
 
-- GPU Shaders (GLSL/HLSL): Instead of the CPU telling the graphics card exactly which pixels to color (raster data), it sends a "Shader" — a small program that runs on the GPU.
+- GPU Shaders (GLSL/HLSL): Instead of the CPU telling the graphics card exactly which pixels to color (raster data), it sends a "Shader" - a small program that runs on the GPU.
 - Virtual Machines in Games. Quake pioneered the use of an embedded interpreter (QuakeC) to decouple gameplay from the engine. The engine provides a stable set of primitives for rendering and physics, while the specific "game" is a program that tells those primitives how to interact.
 - Database Queries (SQL): When you send a complex SQL statement, you are sending a declarative program to the database engine. The engine (the receiver) doesn't have a hard-coded "Monthly Revenue Report" feature; it has a set of relational primitives (select, join, filter) that execute the program you sent to produce a result.
 - eBPF (Extended Berkeley Packet Filter): In modern Linux networking, developers can send sandboxed bytecode directly into the OS kernel. Instead of waiting for a new kernel version to add a specific security check or monitoring tool, you "send a program" that the kernel executes whenever a network packet arrives.

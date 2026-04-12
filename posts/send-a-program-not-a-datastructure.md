@@ -11,8 +11,7 @@ excerpt: >-
   underappreciated ideas in system design. Here's what it was getting at.
 metas:
   title: 'Send a Program, Not a Data Structure'
-  description: >-
-    A look at one of the most underappreciated ideas in system design.
+  description: A look at one of the most underappreciated ideas in system design.
   type: article
 ---
 ## A Big Idea in System Design
@@ -35,8 +34,6 @@ The [pretext library](https://github.com/chenglou/pretext) made a big splash on 
 
 This somewhat opaque tweet touches on a powerful idea in software design. 
 
-Let's unpack it.
-
 Every system that sends information must answer a fundamental question: who does the thinking: the sender or the receiver? Deciding where you put the intelligence has consequences that run through the whole system. A classic example is [PostScript](https://en.wikipedia.org/wiki/PostScript), a printer specification from 1982.
 
 ## Sending a Data Structure
@@ -48,12 +45,27 @@ This works well when the behaviour is simple and stable. But as requirements evo
 
 Eventually, the data structure is forced to carry meaning it was never designed to express, and the systems around it become more and more complex.
 
+### Examples
+
+- REST API (serving JSON/XML): The "intelligence" is hard-coded into the receiver's version of the model. If the sender adds a new field, the receiver is literally "blind" to it until its own code is updated.
+- HTML + CSS. Markup is parsed and rendered by browsers. What started as a simple markup format (HTML) has evolved into a complex set of specifications. As the specifications evolve, browsers and clients must be updated to support the new features. As every web developer knows, we’re at the mercy of the browser vendors to support the latest 'data' we want to send.
+- SVG. A set of predetermined XML tags that the receiver parses and renders. SVG does not contain any logic (eg conditionals or loops). 
+
 ## Sending a Program
 ### The Interpreter
 
 In the second approach, the receiver isn’t a drone: it’s an interpreter, with a fixed set of primitives it natively understands. The sender composes programs from those primitives, and the receiver executes them. The output (eg: the page, the layout, the rendered result) isn’t contained in what was sent. It’s produced by it.
 
 The complexity doesn’t go away, but it gets contained in a more manageable form. Instead of accumulating in an ever-growing data format - and in every system that reads and writes it - it lives in the programs the sender composes. The interpreter itself remains stable. Define it once, and any sender that targets it gains the expressive power of a programming language.
+
+### Examples
+
+- GPU Shaders (GLSL/HLSL): Instead of the CPU telling the graphics card exactly which pixels to color (raster data), it sends a "Shader" — a small program that runs on the GPU.
+- Virtual Machines in Games. Quake pioneered the use of an embedded interpreter (QuakeC) to decouple gameplay from the engine. The engine provides a stable set of primitives for rendering and physics, while the specific "game" is a program that tells those primitives how to interact.
+- Database Queries (SQL): When you send a complex SQL statement, you are sending a declarative program to the database engine. The engine (the receiver) doesn't have a hard-coded "Monthly Revenue Report" feature; it has a set of relational primitives (select, join, filter) that execute the program you sent to produce a result.
+- eBPF (Extended Berkeley Packet Filter): In modern Linux networking, developers can send sandboxed bytecode directly into the OS kernel. Instead of waiting for a new kernel version to add a specific security check or monitoring tool, you "send a program" that the kernel executes whenever a network packet arrives.
+
+The most influential "Send a Program" success story happened inside a printer. In the early 1980s, the computing world faced a problem: how do you send a document to a printer without knowing the printer’s brand, resolution, or memory capacity?
 
 ## PostScript - The Proof of Concept
 
@@ -72,6 +84,23 @@ A [PostScript](https://en.wikipedia.org/wiki/PostScript) file is a program. Send
 [Alan Kay later described this as one of the most important ideas in computing: “Sending a program, not a data structure is a very big idea - and also scales really well if some thought is put into just how the program is set up.”](https://www.quora.com/Should-web-browsers-have-stuck-to-being-document-viewers) 
 
 The interpreter becomes a stable foundation: defined once and understood by all senders. Expressive power scales on the sender side, through the programs it composes. The receiver stays simple.
+
+## The Price of Programmability
+
+Sending a program is a powerful technique, but it has its own trade offs.
+
+### Isolation is Mandatory
+
+Executing code on a remote system introduces a clear security boundary. A robust, sandboxed environment is mandatory for this approach. 
+
+### Reasoning - Inspection and Debugging
+
+Data structures can be comparatively easy to inspect and debug. Use the appropriate viewer tool for the data structure and you can see what is wrong. A program can be opaque until it runs. Writing code that is hard to maintain or reason about is always a potential problem.
+
+### Performance Predictability and The Halting Problem
+
+The performance of parsing a data structure is predictable and easy to test. A program may contain heavy computation that ties up resources or may never terminate. Any system that receives a program needs to be able to handle such cases.
+
 
 ## Why It Still Matters
 

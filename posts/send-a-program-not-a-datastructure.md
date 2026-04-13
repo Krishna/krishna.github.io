@@ -16,7 +16,7 @@ metas:
 ---
 ## A Big Idea in System Design
 
-![Program vs Data Structure](/uploads/send-a-program/hero-code-only.png)
+![Program vs Data Structure](/uploads/send-a-program/hero-code-card.png)
 
 The [pretext library](https://github.com/chenglou/pretext) made a big splash on tech Twitter/X the other week. There are lots of cool demos of what the library unlocks, and I think the library itself demonstrates a number of important lessons about software design. The creator of the library [@_chenglou](https://chenglou.me/) touched briefly on a big idea in a [long post](https://x.com/_chenglou/status/2038561014174875693?s=20) - here's an excerpt: 
 

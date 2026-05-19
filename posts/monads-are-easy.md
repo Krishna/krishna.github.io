@@ -4,12 +4,13 @@ date: '2026-05-15T00:00:00.000Z'
 draft: false
 tags:
   - software engineering
+  - compsci
 comments: {}
 excerpt: >-
   You may have seen some very confusing explanations of what a monad is. Or
   maybe you’ve never heard of monads before. Either way, monads don’t have to be
   complicated or mysterious.   Let’s take a more concrete look at what a monad
-  is. 
+  is.
 ---
 ![Monads are Easy hero image](/uploads/monads-are-easy/hero.png)
 
@@ -23,9 +24,10 @@ By making abstract concepts concrete, we can build up our understanding.
 
 ## A Thing (value), an Operation and a Container
 
-*...[picture of a book]...*
+Here’s a book:
 
-Here’s a book.
+![Illustration of a Book](/uploads/monads-are-easy/book.png)
+
 
 In a dispatch warehouse for an online bookstore, there are various things you might do to a book before it ships:
 
@@ -43,6 +45,8 @@ In this scenario:
 
 Simple.
 
+![Illustration showing: the value, the operation and the container](/uploads/monads-are-easy/key.png)
+
 ## Boxes and operations
 
 Books don't arrive at the scanning station floating in space. They arrive in a container: an order box.
@@ -51,6 +55,8 @@ The scanner works perfectly on a single, loose book.
 
 So when an order box arrives on the conveyor belt, you need to open it, scan each book inside one by one, and pack them into the outgoing box. That's a standard `map` operation: open the container, apply the operation to each item inside, collect the results.
 
+![Illustration of the standard map operation](/uploads/monads-are-easy/01-standard-map-operation.png)
+
 The dispatch centre has a strict policy: to reduce packaging and shipping costs, every order that leaves the building goes out in a single box. 
 
 Most orders are straightforward. The problem is consolidated orders: multiple shipments from different warehouses - each in their own inner box - arrive bundled together in an outer box. 
@@ -58,6 +64,8 @@ Most orders are straightforward. The problem is consolidated orders: multiple sh
 You need to open the outer box, open each inner box in turn, scan every individual book, and pack them all into one single outgoing box.
 
 That smarter process is a Monad. And that specific flattening operation is `flatMap`.
+
+![Illustration of the flatMap operation](/uploads/monads-are-easy/02-flatmap.png)
 
 ## The Recap: What makes it a Monad?
 
@@ -69,13 +77,13 @@ For a container to be a Monad, it must fulfil two strict criteria:
 
 - The Flattening Scanner (`flatMap` / `bind`): A process that takes a box, applies a transformation to each item inside, and collects the results into a single outgoing box. If the contents are inner boxes, it opens them and flattens everything down. Either way, you always end up with one clean box at the end.
 
-If your container can wrap a value and flatten a nested version of itself, congratulations — it's a Monad.
+If your container can wrap a value and flatten a nested version of itself, congratulations: it's a Monad.
 
 ## Is it a Monad?
 
 Now that we know what makes a Monad in practical terms, let's look at some familiar containers and types and see if they qualify. 
 
-We'll set aside the formal mathematical laws for now. If you're curious about those, see “Isn't this a gross simplification?".
+We'll set aside the formal mathematical laws for now, and touch on them lightly later.
 
 ### Array / List 
 - Can it wrap a value? Yes: `[book]` puts a single book into an array.
@@ -94,14 +102,14 @@ We'll set aside the formal mathematical laws for now. If you're curious about th
 
 ### A basic custom structure / data class
 - Can it wrap a value? Yes: any struct or data class can hold a value.
-- Does it have flatMap? It depends: you have to implement it yourself.
+- Does it have `flatMap`? It depends: you have to implement it yourself.
 - Verdict: Maybe a Monad. A plain struct is just a box. To make it a Monad you need to:
 	1. add a `wrap` function or an initializer that puts a value into your struct
 	2. implement `flatMap` such that it applies a transformation and flattens any nesting.
 
 ### JSON object
 - Can it wrap a value? Yes: arbitrarily and deeply.
-- Does it have flatMap? No: there is no built-in flattening operation.
+- Does it have `flatMap`? No: there is no built-in flattening operation.
 - Verdict: Not a Monad.
 
 ## Where the analogy breaks down
@@ -150,3 +158,8 @@ In some ways, yes. Monads have their roots in Category Theory - the branch of ma
 Just like you don’t have to be well versed in the rigours of lambda calculus to use functions and closures.
 
 **A monad is any container that can wrap a value and flatten a nested version of itself.**
+
+![Illustration of the standard map operation](/uploads/monads-are-easy/01-standard-map-operation.png)
+
+![Illustration of the flatMap operation](/uploads/monads-are-easy/02-flatmap.png)
+

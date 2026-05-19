@@ -5,12 +5,18 @@ draft: false
 tags:
   - software engineering
   - compsci
+  - functional-programming
+  - monads
 comments: {}
 excerpt: >-
   You may have seen some very confusing explanations of what a monad is. Or
   maybe you’ve never heard of monads before. Either way, monads don’t have to be
   complicated or mysterious.   Let’s take a more concrete look at what a monad
   is.
+metas:
+  title: 'Monads are Easy'
+  description: Monads don't have to be mysterious. Using a book warehouse analogy, this post explains what a monad is, what flatMap does, and how to spot one in the wild.
+  type: article  
 ---
 ![Monads are Easy hero image](/uploads/monads-are-easy/hero.png)
 
@@ -160,4 +166,3 @@ Just like you don’t have to be well versed in the rigours of lambda calculus t
 ![Illustration of the standard map operation](/uploads/monads-are-easy/01-standard-map-operation.png)
 
 ![Illustration of the flatMap operation](/uploads/monads-are-easy/02-flatmap.png)
-

@@ -14,8 +14,6 @@ excerpt: >-
 ---
 ![Monads are Easy hero image](/uploads/monads-are-easy/hero.png)
 
-*...[draft blog post follows for review and critique]...*
-
 You may have seen some very confusing explanations of what a monad is. Or maybe you’ve never heard of monads before. Either way, monads don’t have to be complicated or mysterious. 
 
 Let’s take a more concrete look at what a monad is. 
